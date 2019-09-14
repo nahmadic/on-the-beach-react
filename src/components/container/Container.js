@@ -8,7 +8,7 @@ function Container () {
     {
       title: "Iberostar Grand Salome",
       location: "Costa Adeje, Tenerife",
-      image: "../../assets/hotel-image-1.png",
+      image: "hotel-image-1.png",
       stars: 5,
       guests: "2 Adults, 2 Children & 1 Infant",
       length: "3rd July 2019 for 7 days",
@@ -19,7 +19,7 @@ function Container () {
     {
       title: "Aguamarina Golf Hotel",
       location: "Costa Adeje, Tenerife",
-      image: "../../assets/hotel-image-2.png",
+      image: "hotel-image-2.png",
       stars: 4,
       guests: "2 Adults, 1 Child",
       length: "27th May 2019 for 7 days",
@@ -30,7 +30,7 @@ function Container () {
     {
       title: "Las Piramides Resort",
       location: "Costa Adeje, Tenerife",
-      image: "../../assets/hotel-image-3.png",
+      image: "hotel-image-3.png",
       stars: 3,
       guests: "2 Adults, 2 Children",
       length: "3rd July 2019 for 7 days",

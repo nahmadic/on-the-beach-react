@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
 import styles from './Container.module.css';
+import Card from '../card/Card.js';
 
-function Container() {
+function Container () {
   const [destinations, setDestinations] = useState([
     {
       title: "Iberostar Grand Salome",
@@ -13,7 +14,7 @@ function Container() {
       length: "3rd July 2019 for 7 days",
       departure: "East Midlands",
       price: 1136.50,
-      descriptions: "The Iberostar Grand Salome has an exceptional location in the south of Tenerife, overlooking the Atlantic Ocean. It is situated between the Golf del Sur and the Amarillo Gold courses, and is an ideal hotel for families, couples and groups who are looking for a holiday full of sport, sun and sea."
+      description: "The Iberostar Grand Salome has an exceptional location in the south of Tenerife, overlooking the Atlantic Ocean. It is situated between the Golf del Sur and the Amarillo Gold courses, and is an ideal hotel for families, couples and groups who are looking for a holiday full of sport, sun and sea."
     },
     {
       title: "Aguamarina Golf Hotel",
@@ -24,7 +25,7 @@ function Container() {
       length: "27th May 2019 for 7 days",
       departure: "Liverpool",
       price: 696.80,
-      descriptions: "The Iberostar Grand Salome has an exceptional location in the south of Tenerife, overlooking the Atlantic Ocean. It is situated between the Golf del Sur and the Amarillo Gold courses, and is an ideal hotel for families, couples and groups who are looking for a holiday full of sport, sun and sea."
+      description: "The Iberostar Grand Salome has an exceptional location in the south of Tenerife, overlooking the Atlantic Ocean. It is situated between the Golf del Sur and the Amarillo Gold courses, and is an ideal hotel for families, couples and groups who are looking for a holiday full of sport, sun and sea."
     },
     {
       title: "Las Piramides Resort",
@@ -35,9 +36,25 @@ function Container() {
       length: "3rd July 2019 for 7 days",
       departure: "Manchester",
       price: 499.99,
-      descriptions: "The Iberostar Grand Salome has an exceptional location in the south of Tenerife, overlooking the Atlantic Ocean. It is situated between the Golf del Sur and the Amarillo Gold courses, and is an ideal hotel for families, couples and groups who are looking for a holiday full of sport, sun and sea."
+      description: "The Iberostar Grand Salome has an exceptional location in the south of Tenerife, overlooking the Atlantic Ocean. It is situated between the Golf del Sur and the Amarillo Gold courses, and is an ideal hotel for families, couples and groups who are looking for a holiday full of sport, sun and sea."
     },
-  ])
+  ]);
+
+  const destinationCards = destinations.map(destination => {
+      return (
+        <Card
+          title={destination.title}
+          location={destination.location}
+          image={destination.image}
+          stars={destination.stars}
+          guests={destination.guests}
+          length={destination.length}
+          departure={destination.departure}
+          price={destination.price}
+          description={destination.description}
+        />
+      )
+  });
 
   return (
     <div className={styles.container}>
@@ -45,7 +62,7 @@ function Container() {
 
       </aside>
       <main>
-        
+        {destinationCards}
       </main>
     </div>
   );

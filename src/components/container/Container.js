@@ -71,11 +71,14 @@ function Container () {
     }
 
     if (currentSort === 'rating') {
-      currentArray.sort((a, b) => a.rating > b.rating ? 1 : -1);
+      currentArray.sort((a, b) => a.rating < b.rating ? 1 : -1);
     }
 
     setDestinations(currentArray);
-    setSortOptions({currentSort: currentSort});
+    setSortOptions({
+      ...sortOptions,
+      currentSort
+    });
   }
 
   const destinationCards = destinations.map(destination => {

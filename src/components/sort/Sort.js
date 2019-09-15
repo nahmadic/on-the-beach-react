@@ -17,7 +17,7 @@ function Sort ({ currentSort, options, sortBy }) {
         btnClass = btnClass.join(' ');
 
         return (
-          <div className={btnClass} onClick={sortBy(option.name)}>
+          <div key={option.name} className={btnClass} onClick={() => sortBy(option.name)}>
             <span className='button-text'>
               sort {option.name !== 'alphabetically' ? 'by ' : ' '}<strong>{option.name}</strong>
             </span>

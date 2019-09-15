@@ -81,6 +81,7 @@ function Container () {
   const destinationCards = destinations.map(destination => {
       return (
         <Card
+          key={destination.title}
           title={destination.title}
           location={destination.location}
           image={destination.image}

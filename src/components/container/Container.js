@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import styles from './Container.module.css';
 import Card from '../card/Card.js';
+import Sort from '../sort/Sort';
 
 function Container () {
   const [destinations, setDestinations] = useState([
@@ -40,6 +41,27 @@ function Container () {
     },
   ]);
 
+  const [sortOptions, setSortOptions] = useState({
+    currentSort: 'price',
+    options: [
+      {
+        name: 'alphabetically',
+        text: `sort <em>alphabetically</em>`,
+        image: 'alpha-icon.png'
+      },
+      {
+        name: 'price',
+        text: `sort by <em>price</em>`,
+        image: 'price-icon.png'
+      },
+      {
+        name: 'rating',
+        text: `sort by <em>star rating</em>`,
+        image: 'rating-icon.png'
+      },
+    ]
+  });
+
   const destinationCards = destinations.map(destination => {
       return (
         <Card
@@ -59,7 +81,10 @@ function Container () {
   return (
     <div className={styles.container}>
       <aside>
-
+        <Sort 
+          currentSort={sortOptions.currentSort}
+          options={sortOptions.options}
+        />
       </aside>
       <main>
         {destinationCards}

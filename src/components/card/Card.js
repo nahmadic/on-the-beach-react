@@ -8,7 +8,7 @@ function Card ({ title, location, image, rating, guests, length, departure, pric
     <article className={styles.card}>
       <div className={styles.top}>
         <div className={styles.image}>
-          <img src={require(`../../assets/${image}`)} alt="holiday image 1"/>
+          <img src={require(`../../assets/${image}`)} alt={title}/>
           <div className={styles.readmore}>Read more about this hotel</div>
         </div>
         <div className={styles.info}>

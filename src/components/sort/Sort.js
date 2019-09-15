@@ -5,7 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './sort.css';
 
-function Sort ({ currentSort, options }) {
+function Sort ({ currentSort, options, sortBy }) {
+  console.log(options);
   return (
     <div className='button-container'>
       {options.map(option => {
@@ -16,7 +17,7 @@ function Sort ({ currentSort, options }) {
         btnClass = btnClass.join(' ');
 
         return (
-          <div className={btnClass}>
+          <div className={btnClass} onClick={sortBy(option.name)}>
             <span className='button-text'>
               sort {option.name !== 'alphabetically' ? 'by ' : ' '}<strong>{option.name}</strong>
             </span>

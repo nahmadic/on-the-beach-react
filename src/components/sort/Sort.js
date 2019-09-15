@@ -22,7 +22,8 @@ function Sort ({ currentSort, options, sortBy }) {
               sort {option.name !== 'alphabetically' ? 'by ' : ' '}<strong>{option.name}</strong>
             </span>
             <FontAwesomeIcon className='button-icon' icon={option.icon === 'alpha' ? faSortAlphaDown : option.icon === 'pound' ? faPoundSign : faStar } />
-          </div>)
+          </div>
+        )
       })}
     </div>
   );

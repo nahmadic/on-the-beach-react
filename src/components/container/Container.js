@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import styles from './Container.module.css';
-import Card from '../card/Card.js';
+import Card from '../card/Card';
 import Sort from '../sort/Sort';
 
 function Container () {

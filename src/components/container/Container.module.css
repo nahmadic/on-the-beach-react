@@ -9,6 +9,8 @@
 
 .container aside {
   width: 32%;
+  box-sizing: border-box;
+  padding-right: 78px;
 }
 
 .container main {

@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './Card.module.css';
 
-function Card ({ title, location, image, stars, guests, length, departure, price, description }) {
+function Card ({ title, location, image, rating, guests, length, departure, price, description }) {
 
   return (
     <article className={styles.card}>
@@ -14,7 +14,7 @@ function Card ({ title, location, image, stars, guests, length, departure, price
         <div className={styles.info}>
           <h2 className={styles.title}>{title}</h2>
           <h3 className={styles.location}>{location}</h3>
-          <div className={styles.stars}>{stars}</div>
+          <div className={styles.stars}>{rating}</div>
           <p className={styles.guests}>{guests}</p>
           <p className={styles.length}>{length}</p>
           <p className={styles.departure}>Departing from <em>{departure}</em></p>

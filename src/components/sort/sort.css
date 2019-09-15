@@ -1,0 +1,36 @@
+.button {
+  background-color: #FFF;
+  color: #162B74;
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 2px solid #162B74;
+  cursor: pointer;
+}
+
+.button:last-of-type {
+  border-bottom: none;
+}
+
+.button.button-active {
+  background-color: #162B74;
+  color: #FFF;
+}
+
+.button.button-active .button-icon {
+  color: #FFF;
+}
+
+.button-text {
+  font-size: 19px;
+}
+
+.button-icon {
+  color: #D4D4D4;
+  font-size: 22px;
+  margin-right: 8px;
+}
+
+.button:last-of-type .button-icon {
+  margin-right: 3px;
+}

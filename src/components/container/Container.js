@@ -43,15 +43,15 @@ const destinationsArray = [
 function Container () {
   const [destinations, setDestinations] = useState([]);
   const [sortOptions, setSortOptions] = useState({
-    currentSort: 'alphabetically',
+    currentSort: 'price',
     options: [
-      {
-        name: 'alphabetically',
-        icon: 'alpha'
-      },
       {
         name: 'price',
         icon: 'pound'
+      },
+      {
+        name: 'alphabetically',
+        icon: 'alpha'
       },
       {
         name: 'rating',

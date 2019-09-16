@@ -30,6 +30,7 @@
   color: #162B74;
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .readmore svg {

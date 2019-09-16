@@ -19,6 +19,18 @@ const destinationsArray = [
     description: "The Iberostar Grand Salome has an exceptional location in the south of Tenerife, overlooking the Atlantic Ocean. It is situated between the Golf del Sur and the Amarillo Gold courses, and is an ideal hotel for families, couples and groups who are looking for a holiday full of sport, sun and sea."
   },
   {
+    title: "Iberostar Grand Salome 2",
+    location: "Costa Adeje, Tenerife",
+    image: "hotel-image-1.png",
+    rating: 5,
+    guests: "2 Adults, 2 Children & 1 Infant",
+    length: "3rd July 2019 for 7 days",
+    departureDate: "3rd July 2019",
+    departure: "Liverpool",
+    price: 1136.50,
+    description: "The Iberostar Grand Salome has an exceptional location in the south of Tenerife, overlooking the Atlantic Ocean. It is situated between the Golf del Sur and the Amarillo Gold courses, and is an ideal hotel for families, couples and groups who are looking for a holiday full of sport, sun and sea."
+  },
+  {
     title: "Aguamarina Golf Hotel",
     location: "Costa Adeje, Tenerife",
     image: "hotel-image-2.png",
@@ -70,8 +82,7 @@ function Container () {
   });
 
   const sortBy = currentSort => {
-    const currentArray = [...destinationsArray];
-    console.log(currentArray);
+    let currentArray = destinations.length ? [...destinations] : [...destinationsArray];
 
     if (currentSort === 'alphabetically') {
       currentArray.sort((a, b) => a.title > b.title ? 1 : -1);
@@ -96,10 +107,26 @@ function Container () {
 
   const filterByAirport = airport => {
     setCurrentAirport(airport);
+
+    let filteredArray = destinations.length ? [...destinations] : [...destinationsArray];
+
+    if (airport !== 'any') {
+      filteredArray = filteredArray.filter(item => item.departure === airport);
+    }
+
+    setDestinations(filteredArray);
   }
 
   const filterByDate = date => {
     setCurrentDepartureDate(date);
+
+    let filteredArray = destinations.length ? [...destinations] : [...destinationsArray];
+
+    if (date !== 'any') {
+      filteredArray = filteredArray.filter(item => item.departureDate === date);
+    }
+
+    setDestinations(filteredArray);
   }
 
   const destinationCards = destinations.map(destination => {

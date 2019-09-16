@@ -49,6 +49,8 @@ const departureDates = destinationsArray.map(destination => destination.departur
 
 function Container () {
   const [destinations, setDestinations] = useState([]);
+  const [currentAirport, setCurrentAirport] = useState('any');
+  const [currentDepartureDate, setCurrentDepartureDate] = useState('any');
   const [sortOptions, setSortOptions] = useState({
     currentSort: 'price',
     options: [
@@ -92,6 +94,14 @@ function Container () {
 
   useEffect(() => sortBy('price'), []);
 
+  const filterByAirport = airport => {
+    setCurrentAirport(airport);
+  }
+
+  const filterByDate = date => {
+    setCurrentDepartureDate(date);
+  }
+
   const destinationCards = destinations.map(destination => {
       return (
         <Card
@@ -119,7 +129,11 @@ function Container () {
         />
         <Filters
           airports={airports}
+          filterByAirport={filterByAirport}
+          currentAirport={currentAirport}
           departureDates={departureDates} 
+          filterByDate={filterByDate}
+          currentDepartureDate={currentDepartureDate}
         />
       </aside>
       <main>

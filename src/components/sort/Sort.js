@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './sort.css';
 
 function Sort ({ currentSort, options, sortBy }) {
-  console.log(options);
   return (
     <div className='button-container'>
       {options.map(option => {

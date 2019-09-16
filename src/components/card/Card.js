@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import styles from './Card.module.css';
 
 function Card ({ title, location, image, rating, guests, length, departure, price, description }) {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <article className={styles.card}>
@@ -20,7 +21,7 @@ function Card ({ title, location, image, rating, guests, length, departure, pric
           <p className={styles.departure}>Departing from <em>{departure}</em></p>
           <div className={styles.button}>
             Book now <br/>
-            <span className={styles.price}>£{price}</span>
+            <span className={styles.price}>£{price.toFixed(2)}</span>
           </div>
         </div>
       </div>

@@ -1,0 +1,21 @@
+label {
+  display: block;
+  font-size: 17px;
+  font-weight: 600;
+  color: #FFF;
+  margin-bottom: 5px;
+}
+
+select {
+  width: 100%;
+  height: 60px;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  color: #162B74;
+  padding: 18px 20px;
+  font-size: 19px;
+  margin-bottom: 10px;
+  background: #FFF url('../../assets/chevron-down.svg') calc(100% - 23px) center / 22px 22px no-repeat;
+  cursor: pointer;
+}

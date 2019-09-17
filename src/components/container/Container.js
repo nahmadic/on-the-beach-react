@@ -151,10 +151,8 @@ function Container () {
         />
         <Filters
           airports={airports}
-          // filterByAirport={filterByAirport}
           currentAirport={currentAirport}
-          departureDates={departureDates} 
-          // filterByDate={filterByDate}
+          departureDates={departureDates}
           currentDepartureDate={currentDepartureDate}
           filterDestinations={filterDestinations}
         />

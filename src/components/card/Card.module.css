@@ -69,6 +69,34 @@
   margin-bottom: 15px;
 }
 
+.stars::after {
+  color: #FED70D;
+}
+
+.stars[data-stars="0"]::after {
+  content: "☆☆☆☆☆";
+}
+
+.stars[data-stars="1"]::after {
+  content: "★";
+}
+
+.stars[data-stars="2"]::after {
+  content: "★★";
+}
+
+.stars[data-stars="3"]::after {
+  content: "★★★";
+}
+
+.stars[data-stars="4"]::after {
+  content: "★★★★";
+}
+
+.stars[data-stars="5"]::after {
+  content: "★★★★★";
+}
+
 .guests {
   margin-bottom: 5px;
 }
@@ -114,6 +142,7 @@
 .bottomcontent h4 {
   font-size: 14px;
   margin-bottom: 15px;
+  color: #162B74;
 }
 
 .description {

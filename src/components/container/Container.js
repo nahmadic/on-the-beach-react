@@ -105,26 +105,21 @@ function Container () {
 
   useEffect(() => sortBy('price'), []);
 
-  const filterByAirport = airport => {
+  const filterDestinations = (airport, date) => {
     setCurrentAirport(airport);
+    setCurrentDepartureDate(date);
 
-    let filteredArray = destinations.length ? [...destinations] : [...destinationsArray];
+    let filteredArray = [...destinationsArray];
 
     if (airport !== 'any') {
       filteredArray = filteredArray.filter(item => item.departure === airport);
     }
 
-    setDestinations(filteredArray);
-  }
-
-  const filterByDate = date => {
-    setCurrentDepartureDate(date);
-
-    let filteredArray = destinations.length ? [...destinations] : [...destinationsArray];
-
     if (date !== 'any') {
       filteredArray = filteredArray.filter(item => item.departureDate === date);
     }
+
+    sortBy(sortOptions.currentSort);
 
     setDestinations(filteredArray);
   }
@@ -156,11 +151,12 @@ function Container () {
         />
         <Filters
           airports={airports}
-          filterByAirport={filterByAirport}
+          // filterByAirport={filterByAirport}
           currentAirport={currentAirport}
           departureDates={departureDates} 
-          filterByDate={filterByDate}
+          // filterByDate={filterByDate}
           currentDepartureDate={currentDepartureDate}
+          filterDestinations={filterDestinations}
         />
       </aside>
       <main>
